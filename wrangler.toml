@@ -13,4 +13,4 @@ kv_namespaces = [
 URL = "https://sks.iuc.edu.tr/tr/yemeklistesi"
 
 [triggers]
-crons = ["* * * * *"]
+crons = ["0 12 1,30,31 * *"]
