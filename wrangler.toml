@@ -1,0 +1,16 @@
+name = "yemekhane"
+main = "index.ts"
+compatibility_date = "2023-10-25"
+
+compatibility_flags = [ "nodejs_compat" ]
+
+browser = { binding = "BW" }
+kv_namespaces = [
+  { binding = "KV", id = "cfa8405707e146f0a2b7ab12d98f0ac8", preview_id = "cfa8405707e146f0a2b7ab12d98f0ac8" }
+]
+
+[vars]
+URL = "https://sks.iuc.edu.tr/tr/yemeklistesi"
+
+[triggers]
+crons = ["* * * * *"]
