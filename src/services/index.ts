@@ -20,6 +20,22 @@ app.get('/', async (c) => {
 	return c.json(data);
 });
 
+app.get('/today', async (c) => {
+	const { KV } = c.env;
+	const date = new Date().toLocaleDateString('en-GB').replaceAll('/', '.');
+
+	const data = await KV.get(date, 'json');
+	if (data === null) {
+		return c.json({
+			status: 200,
+			day: date,
+			message: 'Today there is no meal',
+		});
+	}
+
+	return c.json(data);
+});
+
 app.get('/:date', async (c) => {
 	const date = c.req.param('date');
 	const { KV } = c.env;
@@ -32,7 +48,7 @@ app.get('/:date', async (c) => {
 		});
 	}
 
-	return c.json(data)
+	return c.json(data);
 });
 
 export default app;
