@@ -33,7 +33,11 @@ app.get('/today', async (c) => {
 		});
 	}
 
-	return c.json(data);
+	return c.json({
+		status: 200,
+		day: date,
+		meal: data,
+	});
 });
 
 app.get('/:date', async (c) => {
