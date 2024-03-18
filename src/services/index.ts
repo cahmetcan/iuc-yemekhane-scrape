@@ -4,7 +4,7 @@ import { Bindings } from '../type';
 
 const app = new Hono<{ Bindings: Bindings }>();
 
-app.use("/", cors());
+app.use("*", cors());
 app.get('/', async (c) => {
 	const { KV } = c.env;
 	const month = new Date().getMonth() + 1;
