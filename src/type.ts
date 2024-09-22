@@ -12,7 +12,7 @@ export type MealPlan = {
 };
 
 export type Bindings = {
-	BW: Fetcher;
+	BW: any;
 	KV: KVNamespace;
 	URL: string;
 };
